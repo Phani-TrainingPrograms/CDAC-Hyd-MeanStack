@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const titles = [];
+    function callMe(title){
+
+    }
+
+    function onRemove(title){
+        alert(title)
+        const index = titles.indexOf(title);
+        titles.splice(index, 1);
+        const ul = document.querySelector("ul");
+        ul.innerHTML = "";
+        titles.map((title) => {
+            const li = document.createElement('li');
+            li.textContent = title;
+            ul.appendChild(li);
+        });
+    }
+
+    function onAddItem(){
+        //get the value entered by the user
+        const title = document.getElementById('txtBook').value;
+        //add it to the titles.
+        titles.push(title); 
+        //iterate thru the titles and add it to the ul created below.
+        const ul = document.querySelector("ul");
+        //create an element out of every title in that array..
+        // titles.map(title =>{
+        //     const li = document.createElement('li');
+        //     li.textContent = title;
+        //     ul.appendChild(li);
+        // });
+        ul.innerHTML += `<li>${title}<a href="#" onclick="onRemove('${title}')">X</a></li>`;
+    }
+</script>
+<body>
+    <div>
+        <p>Enter the Fav book:
+            <input type="text" id="txtBook" placeholder="Enter the title">
+            <button id="btnSave" onclick="onAddItem()" >Save</button>
+        </p>
+    </div>
+    <div>
+        <p>
+            <h2>List of Books that I have:</h2>
+            <hr>
+            <ul>
+               
+            </ul>
+        </p>
+    </div>
+</body>
+</html>

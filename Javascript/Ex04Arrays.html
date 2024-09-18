@@ -1,0 +1,43 @@
+<script>
+    const elements = ['Joe', 'Ram', 'Sam', 'Raghu'];
+    console.log(elements)
+    for (let index = 0; index < elements.length; index++) {
+        console.log(elements[index]);
+    }
+    //for in is more like iterating thru' index.
+    for (const index in elements) {
+        console.log("The Index: " + index + ", The Value: " + elements[index])
+    }
+    //foreach statement in C#.
+    for (const element of elements) {
+        console.log(element)
+    }//faster. They are within the bounds of the array and shall not exit the bounds. 
+
+    elements.forEach((element, index) => {
+        console.log(element);
+        console.log(index);
+    });
+
+    elements.push('Sita');//Adds the item as the last element of the array. 
+    elements.unshift('Ajay');//Adds the element to the begining of the array. 
+    
+    
+    elements.splice(3, 0, 'Laxman');//inserting the element at the index 3(4th position). 
+    elements.splice(2, 1, 'Ayodhya Ram');//updates the element at that location,
+    elements.splice(4, 1);//deletes the element at the index 4. 
+
+    for(const name of elements)
+        console.log(name)
+
+    const name = prompt("Enter the name of the element to remove");
+    const index = elements.indexOf(name);
+    if(index < 0){
+        alert("No matching element is found")
+    }else{
+        elements.splice(index, 1);
+    }
+
+    for(const name of elements)
+        console.log(name)
+
+</script>

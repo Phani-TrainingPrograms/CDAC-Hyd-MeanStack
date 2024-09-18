@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Ex05Functions.js"></script>
+    <script>
+        const fVal = parseFloat(prompt("Enter the first value"));
+        const sVal = parseFloat(prompt("Enter the second value"));
+        const option = prompt("Enter the option as Add, Sub, Mul, Sqr or Root");
+
+        switch (option) {
+            case 'Add': alert(addFunc(fVal, sVal)); break;
+            case 'Sub' : alert(subFunc(fVal, sVal)); break;
+            case 'Mul' : alert(mulFunc(fVal, sVal)); break;
+            case 'Sqr' : alert(square(fVal)); break;
+            case 'Root' : alert(root(fVal)); break;
+            default: alert("Invalid choice"); bsreak;
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+    Todo: Replace prompts with text boxes and select for the options. Select is drop down list box that can allow the user to select an item from the list. 
+     -->
+</body>
+</html>

@@ -54,8 +54,38 @@
 3. JS identifies number, string, boolean, object as the possible data types.
 4. If a variable is declared but not assigned to anything, it is called as undefined. JS allows variables to be refered without declaring it. In that case, if an unassigned variable is refered, it is considered as undefined.  
 5. use const keyword for the data that U dont intend to change. Most of the cases, the inputs will be const data as they shall not be modified after the input is recieved from the user.
-6. var is the old way of declaring variables, but it is not safe. It is more global in nature compared to let which is more scope based. let is scope based.  
+6. var is the old way of declaring variables, but it is not safe. It is more global in nature compared to let which is more scope based. let is scope based. 
 
+### Arrays in JS
+1. Arrays help is storing data of the same kind and represent them as a single unit. 
+2. Arrays in JS work more like Collection Data structures as U can add, remove, update elements in the array without recreating them. It is internally handled by the JS Runtime. 
+```
+const elements = ['Joe', 'Ram', 'Sam', 'Raghu'];
+```
+3. Js provides many ways of iterating the elements in the array.
+    - for loop
+    - for..in loop
+    - for...of loop
+    - foreach function of the Array. 
+4. All arrays are objects of the class called Array in JS. 
+5. splice method of array does any of the 3 operations: remove, update as well as insert. It takes the 1st arg which shall be the index of the array, 2nd arg will be the no of elements that it has to remove/insert/update. The 3rd arg will tell if the element is provided, it shall replace the elements from that index, if no element is given, it only removes the elements, if the 2nd arg is 0 and U pass the 3rd arg, it shall add the element behaving like a insertion at that location
 
+### Functions in JS:
+1. Functions is JS can be created in 3 different ways:
+    - Named Functions where U define a function with a name
+    - Anonymous Functions where U create a function without a name and assign it to a variable and the variable behaves like a function.
+    - Arrow Functions which is an improvization of Anonymous functions that helps in creating functions like expressions. It is also called as Lambda Expressions/Functions.  
+2. Named functions are recommended when U have a concrete idea about the function and U want to use it across multiple files like a normal function calls. 
+3. Anonymous and Arrow functions are mostly used in callback functions where your intention of the function creation is only to be used within the function that consumes UR Callback activity. 
 
+### Classes and Objects in JS:
+1. If U want a User defined data type that can hold different kinds of data in it and can perform some operations on that data, then U create a Data type called Class and consume it as objects. 
+2. Over the time, JS has multiple syntaxes for creating classes. 
+3. For creating singleton objects, we can go for plain object creation. 
+4. The old syntax of class creation was using function keyword.     
+5. The new syntax uses the class keyword to create a class(ES6 stds)
 
+More classes and objects and how they behave internally. 
+DOM Example with classes and objects and create a Repository pattern of code.
+Nodejs intro. 
+Callback functions and Promise objects.  

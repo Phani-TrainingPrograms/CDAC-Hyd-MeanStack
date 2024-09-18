@@ -1,0 +1,82 @@
+<!-- This example is used to demo the usage of variables in HTML with Input elements -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onAddFunc(){
+            //extract the input values from the input boxes. 
+            
+            const sp = document.getElementById("spError");
+            const fValue = parseFloat(document.getElementById("firstValue").value);
+            if(isNaN(fValue)){
+                sp.innerText = "Its not a number";
+                return;
+            }
+            const sValue = parseFloat(document.getElementById("secondValue").value);
+            if(isNaN(sValue)){
+                sp.innerText = "Its not a number";
+                return;
+            }
+            sp.innerText = "";
+            //compute the values to a result 
+            const result = fValue + sValue;
+            //set the result value into the small tag that we have placed.
+            document.getElementById("smDisplay").innerText = result
+        }
+
+        function onSubFunc(){
+            //extract the input values from the input boxes. 
+            const fValue = document.getElementById("firstValue").value;
+            const sValue = document.getElementById("secondValue").value;
+            //compute the values to a result 
+            const result = fValue - sValue;
+            //set the result value into the small tag that we have placed.
+            document.getElementById("smDisplay").innerText = result
+        }
+
+        function onMulFunc(){
+            //extract the input values from the input boxes. 
+            const fValue = document.getElementById("firstValue").value;
+            const sValue = document.getElementById("secondValue").value;
+            //compute the values to a result 
+            const result = fValue * sValue;
+            //set the result value into the small tag that we have placed.
+            document.getElementById("smDisplay").innerText = result
+        }
+
+        function onDivFunc(){
+            //extract the input values from the input boxes. 
+            const fValue = document.getElementById("firstValue").value;
+            const sValue = document.getElementById("secondValue").value;
+            //compute the values to a result 
+            const result = fValue / sValue;
+            //set the result value into the small tag that we have placed.
+            document.getElementById("smDisplay").innerText = result
+        }
+    </script>
+ </head>
+ <body>
+    <h1>Welcome To Calc Program</h1>
+    <hr>
+    <div>
+        <p>Enter the First Value : <input type="number" id="firstValue"/></p>
+        <p>Enter the Second Value : <input type="number" id="secondValue"/></p>
+        <p>
+            <button id="btnAdd" onclick="onAddFunc()">Add</button>
+            <button id="btnSubtract" onclick="onSubFunc()">Subtract</button>
+            <button id="btnMultiply" onclick="onMulFunc()">Multiply</button>
+            <button id="btnDivide" onclick="onDivFunc()">Divide</button>
+        </p>
+        <p>
+            The Result: <small id="smDisplay"></small>
+        </p>
+        <p>
+            <span id="spError" style="color: red"></span>
+        </p>
+    </div>
+    
+ </body>
+ </html>

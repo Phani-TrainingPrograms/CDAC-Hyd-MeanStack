@@ -1,0 +1,32 @@
+<script>
+    let fruits; //not assigned
+    console.log(typeof(fruit));
+    fruit = "Apples";
+    console.log("The value of my fav fruit is " + fruit);
+
+    let x = 123; //number
+    x = 345.567;//wrong for a const. 
+
+    console.log(typeof(x))
+    x = "Sample Text";//Stored as string...
+    console.log(typeof(x))
+    
+    x = true ;//boolean. 
+    console.log(typeof(x))
+    
+    x = ["Apples", "Mangoes", "Oranges"];
+    console.log(typeof(x))
+
+    x = { name : "Phani raj", address : "Bangalore"};
+
+    console.log(typeof(x))
+    //Use open-in-browser extension to allow the HTML pages to be viewed in a simpler manner. 
+
+    let example = "Apple 123";
+    {
+        let example = "Mango 123"
+        console.log("The example within the scope: " + example)
+    }
+    console.log("The example outside the scope: " + example)
+
+</script>

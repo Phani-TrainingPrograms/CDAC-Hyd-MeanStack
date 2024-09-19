@@ -1,0 +1,122 @@
+<!-- This example shall create an UI for interacting with the Movie Repo class that we have created to store our Movie data. Currently the data is a in-memory data. later we can store it into browser storage like LocalStorage -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./Movie.js"></script>
+    <script>
+        const repo = new MovieRepository();
+        function onEdit(id){
+            const found = repo.getMovieById(id);
+            document.getElementById('mId').value = found.id;
+            document.getElementById('mTitle').value = found.title;
+            document.getElementById('mDirector').value = found.director;
+            document.getElementById('mRating').value = found.rating;
+        }
+
+        function onSave(){
+            //extract the input values provided by the user and create an Movie object out of it. 
+            const id = document.getElementById("newId").value;
+            const title = document.getElementById("newTitle").value;
+            const director = document.getElementById("newDirector").value;
+            const rating = document.getElementById("newRating").value;
+            const movie = new Movie(id, title, director, rating);
+            //call the Repo's addMovie function to add the record to the application.
+            repo.addMovie(movie); 
+            //message to the user about the succesful insertion
+            alert("Movie is added successfully");
+            populateMovies();
+        }
+        function populateMovies(){
+            const data = repo.getAllMovies();
+            const tBody = document.querySelector("tbody");
+            tBody.innerHTML = "";
+            for (const movie of data) {
+                const row = `<tr><td>${movie.id}</td>
+                    <td>${movie.title}</td>
+                    <td><a href="#" onClick="onEdit(${movie.id})">Edit</a><a href="#">Delete</a></td>
+                    </tr>
+                    `;
+                tBody.innerHTML += row;
+            }
+        }
+        window.addEventListener('load', function(){
+            populateMovies();
+        })
+    </script>
+    <style>
+        body{
+            background-color: bisque;
+            color : brown;
+        }
+        h1{
+            text-align: center;
+            font-size: 30pt;
+            background-color: darkgoldenrod;
+            padding: 15px;
+            color:azure;
+        }
+        div{
+            display: inline-block;
+            min-width: 45%;
+            vertical-align: top;
+            border: 2px dashed rebeccapurple;
+            text-align: center;
+        }
+        a{
+            padding: 3px;
+            margin: 5px;
+            border-radius: 2px;
+            background-color: red;
+            color: white
+        }
+    </style>
+ </head>
+ <body>
+    <h1>Movie database System</h1>
+    <hr>
+    <div>
+        <h2>List of Movies with Us!!!</h2>
+        <p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Movie Id</th>
+                        <th>Movie Title</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </p>
+    </div>
+    <div>
+        <h2>Details of the Movie</h2>
+        <section>
+            <p><input type="text" id="mId" placeholder="Movie Id" disabled></p>
+            <p><input type="text" id="mTitle" placeholder="Movie Title"></p>
+            <p><input type="text" id="mDirector" placeholder="Movie Director"></p>
+            <p><input type="text" id="mRating" placeholder="Movie Rating"></p>
+            <p>
+                <button>Update</button>
+                <button>Cancel</button>
+            </p>
+        </section>
+    </div>
+    <div>
+        <h2>Register new Movie</h2>
+        <section>
+            <p><input type="text" placeholder="Movie Id" id="newId"></p>
+            <p><input type="text" placeholder="Movie Title" id="newTitle"></p>
+            <p><input type="text" placeholder="Movie Director" id="newDirector"></p>
+            <p><input type="text" placeholder="Movie Rating" id="newRating"></p>
+            <p>
+                <button onclick="onSave()">Save Changes</button>
+                <button>Cancel</button>
+            </p>
+        </section>
+    </div>
+ </body>
+ </html>

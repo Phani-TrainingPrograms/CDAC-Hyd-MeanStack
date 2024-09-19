@@ -1,0 +1,69 @@
+<script>
+    //A function that shall take more time to complete could be made asynchronous by allow the flow the app to continue without waiting for the function to complete. 
+/************************First Example on Sync programming**********************************************
+    function bigTaskFunc(){
+        let start = Date.now();
+        while(Date.now() - start < 5000){
+            //do nothing...
+        }
+        return { id : 123, name : "Joe Biden", address: "Washington DC"};
+    }
+
+    console.log("Start the App...");
+    const data = bigTaskFunc();
+    console.log(`The data is ${JSON.stringify(data)}`);
+    console.log("Finishing...");
+***********************************Achieving the same in Async manner**********************
+function fetchData(funcToCall){
+    //This function below shall invoke another function that gives me data after some time. 
+    setTimeout(() => {
+         const data = { id : 123, name : "Joe Biden", address: "Washington DC"};
+         //Shall call a function where we pass this data as argument.
+         funcToCall(data);  
+    }, 5000);
+    console.log("End of the function fetchData");
+}
+
+function displayResult(outputValue){
+    console.log(outputValue)
+};
+
+fetchData(displayResult);
+***********************Promise objects*************************************/
+//Promise is an object provided by the JS Runtime that ensures that UR required function is called when it resolves the required logic for the program. If the logic is not solved.
+function fetchData(){
+    return new Promise(function(onSuccess, onFailure){
+        setTimeout(()=>{
+            const data = { id : 123, name : "Joe Biden", address: "Washington DC"};
+            if(data.id == 123)
+                onSuccess(data);
+            else
+                onFailure("Invalid Id");
+        }, 3000);
+    })
+}
+
+fetchData()
+    .then((data)=>{
+        console.log("Data recieved: ", data)
+    })
+    .catch((err)=>{
+        console.error("Error: ", err)
+    })
+
+async function displayResult(){
+    try {
+        console.log("Statements to run before the call");
+        const data = await fetchData();//Wait for the promise to resolve. 
+        console.log("Data recieved: ", data)
+    } catch (err) {
+        console.error("Error: ", err)
+    }
+}
+//asnyc program is more found in REST API Calls that we make from the front end to extract data from back end services. 
+ 
+displayResult();
+
+
+//In Angular, we have Observables that work similarly where we use them for fetching recods from external Web Applications(REST Full Services).  
+</script>

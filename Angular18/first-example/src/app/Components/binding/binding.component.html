@@ -1,0 +1,17 @@
+
+    <h1>{{title}}</h1>
+    <hr>
+    <p>The Current value: {{inputValue}}</p>
+    <p>
+        Value of the Data: <input (keyup)="onUpdate($event)"  [value] = inputValue/>
+    </p>
+
+    <p>
+        2 Way binding: <input [(ngModel)] = inputValue/>
+    </p>
+    <p>
+        <button (click) = "onSubmit()">Click Me!!!</button>
+    </p>
+    <p>
+        <img [src] = "imgFile" />;
+    </p>

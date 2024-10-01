@@ -1,0 +1,16 @@
+<h1>Calculator Program</h1>
+<hr>
+<p>Enter the First value : <input type="number" [(ngModel)] ="fValue"/></p>
+<p>Enter the Second value : <input type="number" [(ngModel)] ="sValue"/></p>
+<p>Select the option:
+    <select [(ngModel)]="operation">
+        <option>Add</option>
+        <option>Subtract</option>
+        <option>Multiply</option>
+        <option>Divide</option>
+    </select>
+</p>
+<p>
+    <button (click)="onCalc()">Get Result!!!</button>
+</p>
+<p>The Result: {{result}}</p>

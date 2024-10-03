@@ -4,12 +4,14 @@ import { SecondComponent } from './Components/second/second.component';
 import { SinglefileComponent } from "./Components/singlefile/singlefile.component";
 import { BindingComponent } from "./Components/binding/binding.component";
 import { CalcComponent } from "./Components/calc/calc.component";
+import { PipeExampleComponent } from './Components/pipe-example/pipe-example.component';
+import { NavBarComponent } from "./Components/nav-bar/nav-bar.component";
 //Every component will have data(fields), functions(to manupulate the data and event handling). The TS file is used to implement the programming logic of ur component
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SecondComponent, SinglefileComponent, BindingComponent, CalcComponent],
+  imports: [RouterOutlet, SecondComponent, SinglefileComponent, BindingComponent, CalcComponent, PipeExampleComponent, NavBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

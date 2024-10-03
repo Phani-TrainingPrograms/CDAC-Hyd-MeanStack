@@ -1,0 +1,11 @@
+<div>
+    <h2>{{empObj.name | uppercase}}</h2>
+    <hr/>
+    <img [src]="empObj.empPic"/>
+    <p>Emp Id: {{empObj.id}}</p>
+    <p>EmpAddress: {{empObj.address}}</p>
+    <p>Salary: {{empObj.salary | currency : 'INR'}}</p>
+    <p>
+        <a href="#">Details</a>
+    </p>
+</div>

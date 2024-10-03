@@ -1,1 +1,26 @@
-<p>empmanager works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-4" *ngFor="let emp of empList">
+                <app-emp-info [empObj] = emp></app-emp-info>
+                <a class="btn btn-danger btn-sm" (click) = "onView(emp)">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-primary btn-sm m-2">
+                    <i class="fa fa-pencil-square" (click)="onEdit(emp)" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div *ngIf="!edit">
+                <app-empview [emp] = selectedEmp [edit] = edit (onUpdate)="onOutputRecieved($event)"></app-empview>
+            </div>
+            <div *ngIf="edit">
+                <app-empview [emp] = selectedEmp [edit]=edit></app-empview>
+            </div>
+        </div>
+    </div>
+</div>

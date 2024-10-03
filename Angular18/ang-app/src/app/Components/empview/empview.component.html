@@ -1,1 +1,16 @@
-<p>empview works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img [src] = "emp.empPic"/>
+        </div>
+        <div class="col md-7">
+            <p> ID: <input [disabled]="edit" [(ngModel)]="emp.id"/> </p>
+            <p> Name: <input [disabled]="edit" [(ngModel)]="emp.name"/> </p>
+            <p> Address: <input [disabled]="edit" [(ngModel)]="emp.address"/> </p>
+            <p> Salary: <input [disabled]="edit" [(ngModel)]="emp.salary"/> </p>
+            <a class="btn btn-primary" (click)="onEmployeeUpdate()">
+                <i class="fa fa-save" aria-hidden="true"></i>
+                Update</a>
+        </div>
+    </div>
+</div>

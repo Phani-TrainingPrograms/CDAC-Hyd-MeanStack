@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { Movie } from './Models/movie';
 import { MovieService } from './Services/movie.service';
 import { CommonModule } from '@angular/common';
+import { NavBarComponent } from "./Components/nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, NavBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

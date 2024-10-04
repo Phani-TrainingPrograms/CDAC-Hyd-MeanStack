@@ -1,0 +1,29 @@
+<div class="card m-3">
+    <div class="card-header">
+        <h2>{{selectedMovie.title}}</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-5">
+                 <p>Image to be placed here</p>   
+            </div>
+            <div class="col-md-6">
+                <input class="form-control my-2" disabled [value]="selectedMovie.id"/>
+                <input class="form-control my-2" [(ngModel)]="selectedMovie.title"/>
+                <input class="form-control my-2" [(ngModel)]="selectedMovie.director"/>
+                <input class="form-control my-2" [(ngModel)]="selectedMovie.rating"/>
+            </div>
+        </div>
+        <div style="text-align: center;">            
+            <button class="btn btn-warning m-2" (click)="onUpdate()">
+                <i class="fa fa-save" aria-hidden="true"></i>Update
+            </button>
+            <button class="btn btn-primary m-2" routerLink="/">
+                <i class="fa fa-backward" aria-hidden="true"></i>
+                Back
+            </button>
+        </div>
+    </div>
+    {{message.message}}
+</div>
+

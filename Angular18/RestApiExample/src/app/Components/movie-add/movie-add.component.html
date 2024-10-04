@@ -1,0 +1,21 @@
+<div class="container">
+    {{movie | json}}
+    <div class="row">
+        <h2>Movie Registration</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+                Enter the Title :
+                <input class="form-control" [(ngModel)] = movie.title/>
+                Enter the Director :
+                <input class="form-control" [(ngModel)] = movie.director/>
+                Choose the Rating :
+                <input class="form-control" type="range" min="1" max="10" step="1" [(ngModel)] = movie.rating/> 
+            </div>
+            <div class="col-md-3">
+                <button (click)="onSubmit()">Save Changes</button>
+                <button>Back</button>
+            </div>
+        </div>
+    </div>
+</div>

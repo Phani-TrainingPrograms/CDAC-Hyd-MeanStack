@@ -17,4 +17,22 @@ export class MovieService {
   getAllMovies() : Observable<Movie[]>{
     return this.http.get<Movie[]>(this.baseUrl); 
   }
+
+  getMovieById(id: number) : Observable<Movie>{
+    return this.http.get<Movie>(`${this.baseUrl}/${id}`)
+  }
+
+  updateMovie(movie : Movie) : Observable<any>{
+    const tempUrl = `${this.baseUrl}/${movie.id}`;
+    return this.http.put<any>(tempUrl, movie);
+  }
+
+  addMovie(movie : Movie) : Observable<Movie>{
+    return this.http.post<Movie>(this.baseUrl, movie);
+  }
+
+  deleteMovie(id: number) : Observable<any>{
+    return this.http.delete<any>(`${this.baseUrl}/${id}`);
+  }
 }
+//9945205684

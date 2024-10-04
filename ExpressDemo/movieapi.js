@@ -4,6 +4,7 @@ install the packages: mysql2, express
 
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors');
 
 const app = express();
 const port = 1234;
@@ -11,7 +12,7 @@ const port = 1234;
 //////////////////Handling body requests//////////////////////////////////
 app.use(express.urlencoded({extended : true}))//to have body content in the request of the http post operations. 
 app.use(express.json())
-
+app.use(cors())
 ////////////////////////////////MySQL Connection Code////////////////////////////////////////
 const db = mysql.createConnection({
     host: 'localhost',

@@ -1,0 +1,37 @@
+<h2>Reactive forms Example</h2>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label for="empname">Enter the Name: </label>
+                    <input class="form-control" type="text" id="name" name="name" formControlName="name" >
+                    <div style="color:red" *ngIf="empForm.controls['name']?.invalid && empForm.controls['name']?.touched">
+                        <small *ngIf="empForm.controls['name']?.errors?.['required']">Name is mandatory. </small>   
+                        <small *ngIf="empForm.controls['name']?.errors?.['minlength']">Name should be min of 3 charecters </small>   
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Enter the Email Address: </label>
+                    <input  class="form-control" type="email" id="email" name="email" formControlName="email">
+                    <div style="color:red" *ngIf="empForm.controls['email']?.invalid && empForm.controls['email']?.touched">
+                        <small *ngIf="empForm.controls['email']?.errors?.['required']">Email is mandatory. </small>   
+                        <small *ngIf="empForm.controls['email']?.errors?.['email']">Email Format is invalid</small>   
+                    </div>
+                </div>
+                <div>
+                    <label for="phone">Enter the Mobile no: </label>
+                    <input  class="form-control" type="text" id="mobile" name="mobile" formControlName="mobile">
+                    <div style="color:red" *ngIf="empForm.controls['mobile']?.invalid && empForm.controls['mobile']?.touched">
+                        <small *ngIf="empForm.controls['mobile']?.errors?.['required']">Phone no is mandatory. </small>   
+                        <small *ngIf="empForm.controls['mobile']?.errors?.['minlength']">Contact no should be min of 10 numbers</small>   
+                        <small *ngIf="empForm.controls['mobile']?.errors?.['maxlength']">Contact no should not be more than 10 numbers</small>   
+                    </div>
+                </div>
+                
+                <button class="btn btn-danger m-4" [disabled]="empForm.invalid" type="submit">Submit</button>
+            </form> 
+        </div>
+    </div>
+</div>

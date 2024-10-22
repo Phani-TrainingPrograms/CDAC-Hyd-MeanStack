@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+//Example for using Props: properties for UR component that is passed from the external components(parent components)
 export default function UserInfo(props) {
   const name = props.name
   const age = props.age

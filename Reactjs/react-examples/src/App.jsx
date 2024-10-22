@@ -2,6 +2,9 @@ import Button from './Button'
 import Ex10UseStateExample from './Ex10UseStateExample'
 import Ex11ArrayStateExample from './Ex11ArrayStateExample'
 import Ex12ObjectStateExample from './Ex12ObjectStateExample'
+import Ex13TodolistExample from './Ex13TodolistExample'
+import Ex14UseEffectExample from './Ex14UseEffectExample'
+import Ex15DigitalClock from './Ex15DigitalClockExample'
 import Food from './Food'
 import Footer from './Footer'
 import Header from './Header'
@@ -44,8 +47,11 @@ function App() {
       <Button/>
 
       <Ex10UseStateExample/>
-      <Ex11ArrayStateExample/>*/}
+      <Ex11ArrayStateExample/>
       <Ex12ObjectStateExample/>
+      <Ex13TodolistExample/>
+      <Ex14UseEffectExample/>*/}
+      <Ex15DigitalClock/>
       <Footer/>
     </>
   )

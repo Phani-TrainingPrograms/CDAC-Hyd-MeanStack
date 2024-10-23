@@ -5,6 +5,10 @@ import Ex12ObjectStateExample from './Ex12ObjectStateExample'
 import Ex13TodolistExample from './Ex13TodolistExample'
 import Ex14UseEffectExample from './Ex14UseEffectExample'
 import Ex15DigitalClock from './Ex15DigitalClockExample'
+import Ex16UseContextExample from './Ex16UseContextExample'
+import Ex17UseRefExample from './Ex17UseRefExample'
+import Ex18Calc from './Ex18Calc'
+import Ex19FetchApiExample from './Ex19FetchApiExample'
 import Food from './Food'
 import Footer from './Footer'
 import Header from './Header'
@@ -50,8 +54,12 @@ function App() {
       <Ex11ArrayStateExample/>
       <Ex12ObjectStateExample/>
       <Ex13TodolistExample/>
-      <Ex14UseEffectExample/>*/}
-      <Ex15DigitalClock/>
+      <Ex14UseEffectExample/>
+      <Ex15DigitalClock/> 
+      <Ex16UseContextExample/>
+      <Ex17UseRefExample/>*/}
+      <Ex18Calc/>
+      <Ex19FetchApiExample/>
       <Footer/>
     </>
   )
